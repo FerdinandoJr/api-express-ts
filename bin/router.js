@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const controller_1 = require("./controller");
+const defined_routes_1 = require("./defined-routes");
+exports.router = (0, express_1.Router)();
+exports.router.use('/hello-world', controller_1.Controller[defined_routes_1.DefinedRoutes.HelloWorld]);
+exports.router.use('/hello-leo', controller_1.Controller[defined_routes_1.DefinedRoutes.HelloLeo]);
+exports.router.post('/create-seller', controller_1.Controller[defined_routes_1.DefinedRoutes.CreateSeller]);
+exports.router.post('/create-order', controller_1.Controller[defined_routes_1.DefinedRoutes.CreateOrder]);
